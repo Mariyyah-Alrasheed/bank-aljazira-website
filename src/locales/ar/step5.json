@@ -1,0 +1,10 @@
+{
+  "congratsAlt": "تهانينا",
+  "prequalifiedMessage": "أنت مؤهل مبدئيًا للحصول على هذا القرض والحد الأقصى لمبلغ هو {{maxAmount}} جنيه مصري وفقا للشروط والأحكام.",
+  "enterAmountMessage": "الرجاء إدخال قيمة القرض المطلوبة ضمن الحد الأقصى",
+  "maxLimitLabel": "الحد الأقصى: {{maxAmount}}",
+  "currency": "EGP",
+  "currencyLabel": "العملة",
+  "maxValueLabel": "أقصى قيمة",
+  "verificationAlert": "تم التحقق من البيانات"
+}

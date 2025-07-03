@@ -1,0 +1,72 @@
+{
+  "capitalStability": "Capital Stability in the Record",
+  "financialStatements": "Availability of Financial Statements",
+  "activityTypeEvaluative": "Type of Activity",
+  "numberOfEmployees": "Number of Employees",
+  "licensesAvailability": "Licenses Availability",
+  "mainEngineExperienceYears": "Years of Experience of Main Operator",
+  "secondManagementPresence": "Second Management Line Exists",
+  "bankCreditFacilities": "Bank Dealings (Credit Facilities)",
+  "annualSalesVolume": "Annual Sales Volume",
+  "yearsWithOurBank": "Years Dealing with Our Bank",
+  "ownersTitle": "Owners List",
+  "suppliersTitle": "Suppliers List",
+  "addOwner": "Add Owner",
+  "addSupplier": "Add Supplier",
+  "ownerType": "Owner Type",
+  "cardNumber": "Card Number",
+  "supplierName": "Supplier Name",
+  "crn": "CRN",
+  "value": "Value",
+  "soldGoods": "Sold Goods",
+
+  "options": {
+    "capitalStability": {
+      "jointStock": "Joint Stock Company",
+      "limitedLiability": "Limited Liability Company",
+      "individual": "Sole Proprietorship"
+    },
+    "financialStatements": {
+      "<1": "Less than 1 year",
+      "1-3": "1-3 years",
+      ">3": "More than 3 years"
+    },
+    "activityTypeEvaluative": {
+      "trade": "Trade",
+      "industry": "Industry",
+      "services": "Services"
+    },
+    "numberOfEmployees": {
+      "1-10": "1-10",
+      "11-50": "11-50",
+      ">50": "More than 50"
+    },
+    "licensesAvailability": {
+      "available": "Available",
+      "notAvailable": "Not Available"
+    },
+    "mainEngineExperienceYears": {
+      "<1": "Less than 1 year",
+      "1-3": "1-3 years",
+      ">3": "More than 3 years"
+    },
+    "secondManagementPresence": {
+      "yes": "Yes",
+      "no": "No"
+    },
+    "bankCreditFacilities": {
+      "<100k": "Less than 100,000",
+      "100k-500k": "100,000 - 500,000",
+      ">500k": "More than 500,000"
+    },
+    "yearsWithOurBank": {
+      "<1": "Less than 1 year",
+      "1-3": "1-3 years",
+      ">3": "More than 3 years"
+    },
+    "ownerType": {
+      "mainOwner": "Main Owner",
+      "subOwner": "Sub Owner"
+    }
+  }
+}

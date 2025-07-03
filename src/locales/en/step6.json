@@ -1,0 +1,10 @@
+{
+  "attachmentsTitle": "Attachments",
+  "instructions": "Please download the form for each file by clicking the download button, then fill it out and upload it by clicking the attach document button.",
+  "checkboxLabel": "I approve and authorize BDC to perform I-Score investigation and all required investigations to proceed the loan request",
+  "checkboxError": "Please agree to the authorization before proceeding.",
+  "fileName": "File Name",
+  "downloadTemplate": "Download Template",
+  "attachDocument": "Attach Document"
+
+}

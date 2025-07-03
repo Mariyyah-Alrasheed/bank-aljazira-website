@@ -1,0 +1,22 @@
+{
+  "pageTitle": "My Loan Requests",
+  "companyNameLabel": "Company Name",
+  "commercialRegistrationLabel": "Commercial Registration Number",
+  "phoneNumberLabel": "Contact Phone Number",
+  "trackingNumberLabel": "Request Tracking Number",
+  "clientNumberLabel": "Client Number (CIF)",
+  "searchButton": "Search",
+  "noSavedDataAlert": "No saved data found",
+  "invalidDataAlert": "Stored data is invalid.",
+  "notFoundAlert": "No requests found.",
+  "table": {
+    "trackingNumber": "Tracking Number",
+    "companyName": "Company Name",
+    "commercialRegistration": "Commercial Registration Number",
+    "phoneNumber": "Contact Phone Number",
+    "clientNumber": "Client Number (CIF)",
+    "status": "Request Status"
+  },
+  "defaultStatus": "Draft",
+  "foundAlert": "Found: {{companyName}}"
+}

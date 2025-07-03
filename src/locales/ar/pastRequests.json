@@ -1,0 +1,22 @@
+{
+  "pageTitle": "عرض طلبات القروض الخاصة بي",
+  "companyNameLabel": "اسم الشركة",
+  "commercialRegistrationLabel": "رقم السجل التجاري",
+  "phoneNumberLabel": "رقم الجوال للاتصال",
+  "trackingNumberLabel": "رقم تعقب الطلب",
+  "clientNumberLabel": "رقم العميل (CIF)",
+  "searchButton": "بحث",
+  "noSavedDataAlert": "لا توجد بيانات محفوظة",
+  "invalidDataAlert": "البيانات المخزنة غير صالحة.",
+  "notFoundAlert": "لم يتم العثور على طلبات.",
+  "table": {
+    "trackingNumber": "رقم تعقب الطلب",
+    "companyName": "اسم الشركة",
+    "commercialRegistration": "رقم السجل التجاري",
+    "phoneNumber": "رقم الجوال للاتصال",
+    "clientNumber": "رقم العميل (CIF)",
+    "status": "حالة الطلب"
+  },
+  "defaultStatus": "مسودة",
+  "foundAlert": "تم العثور على: {{companyName}}"
+}

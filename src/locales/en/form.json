@@ -1,0 +1,15 @@
+{
+  "title": "Apply For Very Small Business Loan Request",
+  "back": "Back",
+  "next": "Continue",
+  "validationComplete": "Data has been validated and Next was clicked",
+  "formSubmitted": "Application submitted successfully!",
+  "steps": [
+    "Customer Info",
+    "Financial Eligibility",
+    "General Eligibility",
+    "Evaluation Eligibility",
+    "Client Validation",
+    "Required Attachments"
+  ]
+}

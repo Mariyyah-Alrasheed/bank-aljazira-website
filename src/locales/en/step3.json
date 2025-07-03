@@ -1,0 +1,46 @@
+{
+  "legalForm": "Legal Form",
+  "engineAge": "Main engine/owner experience",
+  "activityAge": "Activity Age",
+  "activityLocation": "Business Location",
+  "activityType": "Activity Type",
+  "otherCompanyActivity": "Other Company Activity",
+  "personalAssets": "Personal Assets",
+  "options": {
+    "legalForm": {
+      "jointStock": "Joint Stock Company",
+      "limitedLiability": "Limited Liability Company",
+      "individual": "Sole Proprietorship"
+    },
+    "engineAge": {
+      "<1": "Less than 1 year",
+      "1-3": "1-3 years",
+      ">3": "More than 3 years"
+    },
+    "activityAge": {
+      "<1": "Less than 1 year",
+      "1-3": "1-3 years",
+      ">3": "More than 3 years"
+    },
+    "activityLocation": {
+      "riyadh": "Riyadh",
+      "jeddah": "Jeddah",
+      "dammam": "Dammam"
+    },
+    "activityType": {
+      "trade": "Trade",
+      "industry": "Industry",
+      "services": "Services"
+    },
+    "otherCompanyActivity": {
+      "activity1": "Activity 1",
+      "activity2": "Activity 2",
+      "activity3": "Activity 3"
+    },
+    "personalAssets": {
+      "<100k": "Less than 100,000",
+      "100k-500k": "100,000 - 500,000",
+      ">500k": "More than 500,000"
+    }
+  }
+}

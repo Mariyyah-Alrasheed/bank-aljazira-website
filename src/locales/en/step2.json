@@ -1,0 +1,14 @@
+{
+  "salesVolume": "Sales volume during the previous year (EGP)",
+  "capital": "Capital",
+  "options": {
+    "salesVolume": {
+      "low": "Less than 300K",
+      "high": "Less than 500K"
+    },
+    "capital": {
+      "low": "Less than 300K",
+      "high": "Less than 500K"
+    }
+  }
+}

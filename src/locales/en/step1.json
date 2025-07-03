@@ -1,0 +1,13 @@
+{
+  "companyName": "Company Name",
+  "crNumber": "Commercial Registration Number",
+  "phoneNumber": "Phone Number",
+  "loanAmount": "Loan Amount (SAR)",
+  "entityCode": "Entity Code in the Bank (if available)",
+  "branch": "Bank Branch You Wish to Borrow From",
+  "branches": {
+    "riyadh": "Riyadh Branch",
+    "jeddah": "Jeddah Branch",
+    "dammam": "Dammam Branch"
+  }
+}

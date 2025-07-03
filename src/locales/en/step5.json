@@ -1,0 +1,10 @@
+{
+  "congratsAlt": "Congratulations",
+  "prequalifiedMessage": "You are preliminarily qualified for this loan and the maximum amount is {{maxAmount}} EGP according to terms and conditions.",
+  "enterAmountMessage": "Please enter the requested loan amount within the maximum limit",
+  "maxLimitLabel": "Maximum limit: {{maxAmount}}",
+  "currency": "EGP",
+  "currencyLabel": "Currency",
+  "maxValueLabel": "Maximum value",
+  "verificationAlert": "Data verified successfully"
+}

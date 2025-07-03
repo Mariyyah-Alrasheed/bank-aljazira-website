@@ -1,0 +1,72 @@
+{
+  "capitalStability": "ثبات رأس المال بالسجل",
+  "financialStatements": "توافر القوائم المالية",
+  "activityTypeEvaluative": "نوع النشاط",
+  "numberOfEmployees": "عدد العاملين بالمنشأة",
+  "licensesAvailability": "توافر الرخص",
+  "mainEngineExperienceYears": "عدد سنوات خبرة المحرك الرئيسي للنشاط",
+  "secondManagementPresence": "وجود صف ثاني للإدارة",
+  "bankCreditFacilities": "التعامل مع البنوك (تسهيلات ائتمانية)",
+  "annualSalesVolume": "حجم المبيعات السنوية",
+  "yearsWithOurBank": "عدد سنوات التعامل مع مصرفنا",
+  "ownersTitle": "قائمة المالكين",
+  "suppliersTitle": "قائمة الموردين",
+  "addOwner": "إضافة مالك",
+  "addSupplier": "إضافة مورد",
+  "ownerType": "صفة المالك",
+  "cardNumber": "رقم البطاقة",
+  "supplierName": "اسم المورد",
+  "crn": "CRN",
+  "value": "القيمة",
+  "soldGoods": "السلع المباعة",
+
+  "options": {
+    "capitalStability": {
+      "jointStock": "شركة مساهمة",
+      "limitedLiability": "شركة ذات مسؤولية محدودة",
+      "individual": "مؤسسة فردية"
+    },
+    "financialStatements": {
+      "<1": "أقل من سنة",
+      "1-3": "1-3 سنوات",
+      ">3": "أكثر من 3 سنوات"
+    },
+    "activityTypeEvaluative": {
+      "trade": "تجارة",
+      "industry": "صناعة",
+      "services": "خدمات"
+    },
+    "numberOfEmployees": {
+      "1-10": "1-10",
+      "11-50": "11-50",
+      ">50": "أكثر من 50"
+    },
+    "licensesAvailability": {
+      "available": "متوفر",
+      "notAvailable": "غير متوفر"
+    },
+    "mainEngineExperienceYears": {
+      "<1": "أقل من سنة",
+      "1-3": "1-3 سنوات",
+      ">3": "أكثر من 3 سنوات"
+    },
+    "secondManagementPresence": {
+      "yes": "نعم",
+      "no": "لا"
+    },
+    "bankCreditFacilities": {
+      "<100k": "أقل من 100,000",
+      "100k-500k": "100,000 - 500,000",
+      ">500k": "أكثر من 500,000"
+    },
+    "yearsWithOurBank": {
+      "<1": "أقل من سنة",
+      "1-3": "1-3 سنوات",
+      ">3": "أكثر من 3 سنوات"
+    },
+    "ownerType": {
+      "mainOwner": "مالك رئيسي",
+      "subOwner": "مالك فرعي"
+    }
+  }
+}
