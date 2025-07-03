@@ -8,7 +8,7 @@ import DirectionProvider from "./components/DirectionProvider.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/bank-aljazira-website">
       <DirectionProvider>
         <App />
       </DirectionProvider>

@@ -5,6 +5,7 @@ import { defineConfig } from "vite"
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/bank-aljazira-website/",  // <--- هنا أضفت base
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
