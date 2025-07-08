@@ -12,6 +12,8 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/ui/select";
+import type { Control, FieldValues } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 type Option = {
   value: string;
@@ -21,7 +23,7 @@ type Option = {
 type CustomSelectFieldProps = {
   name: string;
   label: string;
-  control: any;
+  control: Control<FieldValues>;
   options: Option[];
   placeholder?: string;
   required?: boolean;
@@ -35,6 +37,9 @@ export default function CustomSelectField({
   placeholder = " - ",
   required = false,
 }: CustomSelectFieldProps) {
+  const { i18n } = useTranslation();
+  const dir = i18n.language === "ar" ? "rtl" : "ltr";
+
   return (
     <FormField
       control={control}
@@ -49,12 +54,12 @@ export default function CustomSelectField({
             <FormControl>
               <SelectTrigger
                 className="w-full h-7 px-3 py-1 text-base border border-input rounded-[6px] bg-transparent shadow-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none placeholder:text-muted-foreground transition-colors"
-                dir="rtl"
+                dir={dir}
               >
                 <SelectValue placeholder={placeholder} />
               </SelectTrigger>
             </FormControl>
-            <SelectContent>
+            <SelectContent dir={dir}>
               {options.map((option) => (
                 <SelectItem key={option.value} value={option.value}>
                   {option.label}
