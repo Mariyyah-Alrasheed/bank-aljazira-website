@@ -123,7 +123,7 @@ export default function PastRequests() {
             className="w-full mt-6 text-xs border-collapse border-b-1 "
             dir={dir}
           >
-            <thead className="bg-gray-200 ">
+            <thead className="bg-gray-200 xl:text-lg">
               <tr className="bg-gray-100 ">
                 <th className="px-4 py-2">{t("table.trackingNumber")}</th>
                 <th className="px-4 py-2">{t("table.companyName")}</th>
