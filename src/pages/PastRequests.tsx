@@ -9,12 +9,28 @@ import { useTranslation } from "react-i18next";
 export default function PastRequests() {
   const searchForm = useForm();
   const { handleSubmit, control } = searchForm;
-  const [match, setMatch] = useState<any>(null);
+  type MatchType = {
+    companyName: string;
+    crNumber?: string;
+    phoneNumber?: string;
+    status?: string;
+  } | null;
+
+  const [match, setMatch] = useState<MatchType>(null);
   const { t, i18n } = useTranslation("pastRequests");
 
   const dir = i18n.language === "ar" ? "rtl" : "ltr";
 
-  const onSubmit = (data: any) => {
+  type FormValues = {
+    companyName: string;
+    commercialRegistration?: string;
+    phoneNumber?: string;
+    trackingNumber?: string;
+    clientNumber?: string;
+  };
+
+  const onSubmit = (data: unknown) => {
+    const formData = data as FormValues;
     const stored = localStorage.getItem("finalFormData");
     if (!stored) return alert(t("noSavedDataAlert"));
 
@@ -30,7 +46,7 @@ export default function PastRequests() {
       parsed.companyName &&
       parsed.companyName
         .toLowerCase()
-        .includes(data.companyName.trim().toLowerCase())
+        .includes(formData.companyName.trim().toLowerCase())
         ? parsed
         : null;
 
