@@ -46,7 +46,7 @@ export default function PastRequests() {
   return (
     <FormProvider {...searchForm}>
       <div className="text-right" dir="rtl">
-        <CardHeaderWithClose text={t("pageTitle")} className="mb-12" />
+        <CardHeaderWithClose text={t("pageTitle")} className="mb-12 xl:p-5" />
 
         <div className="mx-auto w-full max-w-4xl" dir={dir}>
           <form onSubmit={handleSubmit(onSubmit)} className="">
@@ -89,7 +89,7 @@ export default function PastRequests() {
               <div className="flex items-end">
                 <Button
                   type="submit"
-                  className="w-full h-7 bg-[#F58232] text-white text-sm rounded-sm flex items-center justify-center"
+                  className="w-full h-7 xl:h-10 bg-[#F58232] text-white text-sm rounded-sm flex items-center justify-center"
                 >
                   {t("searchButton")}
                 </Button>

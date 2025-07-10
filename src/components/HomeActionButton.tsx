@@ -26,7 +26,7 @@ export default function HomeActionButton({
       onClick={() => navigate(to)}
     >
       {/* الخلفية البرتقالية 40% */}
-      <span className="bg-[#F58232] w-2/5 flex items-center justify-center py-5">
+      <span className="bg-[#F58232] w-2/5 flex items-center justify-center py-5 xl:py-7">
         {icon}
       </span>
       {/* النص 60% */}

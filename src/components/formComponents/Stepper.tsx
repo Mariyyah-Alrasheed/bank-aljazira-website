@@ -17,13 +17,13 @@ export default function Stepper({ currentStep = 0 }: { currentStep: number }) {
   const steps = t("steps", { returnObjects: true }) as string[];
 
   return (
-    <div className="w-full flex flex-col gap-3 text-center" dir={dir}>
-      <div className="flex flex-wrap w-full text-[11px]">
+    <div className="w-full flex flex-col gap-3 text-center xl:mb-4" dir={dir}>
+      <div className="flex flex-wrap w-full text-[11px] xl:text-base">
         {steps.map((step, index) => (
           <div key={index} className="flex">
             <div
               className={cn(
-                " py-2 border-b-4 pl-8 ml-0.5",
+                "py-2 xl:py-3 border-b-4 pe-8 xl:pe-12 ml-0.5",
                 index === currentStep
                   ? "border-[#F05030] text-[#F05030] font-semibold"
                   : "border-gray-300 text-gray-500"

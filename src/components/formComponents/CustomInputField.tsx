@@ -40,7 +40,7 @@ export default function CustomInputField({
       render={({ field }) => (
         <FormItem>
           {label && (
-            <FormLabel>
+            <FormLabel className="xl:text-base xl:my-3">
               {label}
               {required && <span className="text-gray-500 ml-1">*</span>}
             </FormLabel>

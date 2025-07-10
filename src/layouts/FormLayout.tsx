@@ -1,20 +1,26 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useForm, FormProvider } from "react-hook-form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Stepper from "../components/formComponents/Stepper";
 import { Button } from "@/components/ui/button";
 import {
-  customerInfoSchema,
+  getCustomerInfoSchema,
   financialEligibilitySchema,
   generalEligibilitySchema,
   evaluationEligibilitySchema,
   clientValidationSchema,
   attachmentsSchema,
+  type CustomerFormValue,
+  type FinancialFormValue,
+  type GeneralEligibilityFormValue,
+  type EvaluationEligibilityFormValue,
+  type ClientValidationFormValue,
+  type AttachmentsFormValue,
 } from "@/schemas/formSchemas";
 // import CloseButton from "@/components/CloseButton";
 import CardHeaderWithClose from "@/components/CardHeaderWithClose";
 import { useTranslation } from "react-i18next";
+import type { ZodTypeAny } from "zod";
 
 // ✅ تعريف خطوات التقديم
 const stepPathMap: Record<string, number> = {
@@ -28,44 +34,64 @@ const stepPathMap: Record<string, number> = {
 
 const steps = Object.keys(stepPathMap);
 
-const schemas = [
-  customerInfoSchema,
-  financialEligibilitySchema,
-  generalEligibilitySchema,
-  evaluationEligibilitySchema,
-  clientValidationSchema,
-  attachmentsSchema, // إذا كان لديك سكيمة للمرفقات
-  // افترض وجود سكيمة للتحقق من العميل
-] as const;
+// const schemas = [
+//   getCustomerInfoSchema(tCheck),
+//   financialEligibilitySchema,
+//   generalEligibilitySchema,
+//   evaluationEligibilitySchema,
+//   clientValidationSchema,
+//   attachmentsSchema, // إذا كان لديك سكيمة للمرفقات
+//   // افترض وجود سكيمة للتحقق من العميل
+// ] as const;
 
-type CustomerInfo = z.infer<typeof customerInfoSchema>;
-type FinancialEligibility = z.infer<typeof financialEligibilitySchema>;
-type GeneralEligibility = z.infer<typeof generalEligibilitySchema>;
-type EvaluationEligibility = z.infer<typeof evaluationEligibilitySchema>;
-type ClientValidation = z.infer<typeof clientValidationSchema>;
-type Attachments = z.infer<typeof attachmentsSchema>; // إذا كان لديك سكيمة للمرفقات
+// type CustomerInfo = z.infer<typeof customerInfoSchema>;
+// type FinancialEligibility = z.infer<typeof financialEligibilitySchema>;
+// type GeneralEligibility = z.infer<typeof generalEligibilitySchema>;
+// type EvaluationEligibility = z.infer<typeof evaluationEligibilitySchema>;
+// type ClientValidation = z.infer<typeof clientValidationSchema>;
+// type Attachments = z.infer<typeof attachmentsSchema>; // إذا كان لديك سكيمة للمرفقات
 
-type FormValues = CustomerInfo &
-  FinancialEligibility &
-  GeneralEligibility &
-  EvaluationEligibility &
-  ClientValidation &
-  Attachments;
+type FormValues = CustomerFormValue &
+  FinancialFormValue &
+  GeneralEligibilityFormValue &
+  EvaluationEligibilityFormValue &
+  ClientValidationFormValue &
+  AttachmentsFormValue;
+
+// type TypeFormValues =
+//   | CustomerInfo
+//   | FinancialEligibility
+//   | GeneralEligibility
+//   | EvaluationEligibility
+//   | ClientValidation
+//   | Attachments;
 
 export default function FormLayout() {
   const location = useLocation();
   const navigate = useNavigate();
   const { t, i18n } = useTranslation("form");
+  // const { t: tCheck } = useTranslation("check");
+
   const dir = i18n.language === "ar" ? "rtl" : "ltr";
+
+  const schemas: ZodTypeAny[] = [
+    getCustomerInfoSchema(t),
+    financialEligibilitySchema(t),
+    generalEligibilitySchema(t),
+    evaluationEligibilitySchema(t),
+    clientValidationSchema(t),
+    attachmentsSchema(t), // إذا كان لديك سكيمة للمرفقات
+    // افترض وجود سكيمة للتحقق من العميل
+  ] as const;
 
   const currentStep =
     Object.entries(stepPathMap).find(([key]) =>
       location.pathname.includes(key)
     )?.[1] ?? 0;
 
-  const currentSchema = schemas[currentStep] ?? customerInfoSchema; // مثلاً، افتراضيًا أول سكيمة
+  const currentSchema = schemas[currentStep] ?? getCustomerInfoSchema(t); // مثلاً، افتراضيًا أول سكيمة
   const methods = useForm<FormValues>({
-    resolver: zodResolver(currentSchema as any),
+    resolver: zodResolver(currentSchema),
     defaultValues: {
       companyName: "",
       crNumber: "",
@@ -136,25 +162,27 @@ export default function FormLayout() {
 
   return (
     <>
-      <div className="" dir="rtl">
+      <div className="flex min-h-[80vh]" dir={dir}>
         <FormProvider {...methods}>
           <form
             onSubmit={methods.handleSubmit(onSubmit)}
-            className="flex flex-col w-4/5 mx-auto py-4 gap-4"
-            dir="rtl"
+            className="flex min-h-[80vh] flex-col h-full w-4/5 mx-auto py-4 gap-4"
+            dir={dir}
           >
             <CardHeaderWithClose text={t("title")} />
 
             <Stepper currentStep={currentStep} />
 
-            <Outlet />
+            <div className="flex-grow ">
+              <Outlet />
+            </div>
 
-            <div className=" bottom-0 bg-white py-2 flex ">
+            <div className=" bg-white py-2 flex flex-none">
               <div className="w-full flex justify-between px-4" dir={dir}>
                 {currentStep !== 0 ? (
                   <Button
                     type="button"
-                    className="bg-gray-200 text-gray-700 h-6 text-[10px]"
+                    className="bg-gray-200 text-gray-700 h-6 xl:h-8 text-[10px] xl:text-base"
                     onClick={() => {
                       const prevStep = currentStep - 1;
                       if (prevStep >= 0) {
@@ -171,7 +199,7 @@ export default function FormLayout() {
 
                 <Button
                   type="submit"
-                  className="bg-[#F58232] text-white h-6 text-[10px]"
+                  className="bg-[#F58232] text-white h-6 xl:h-8 text-[10px] xl:text-base"
                 >
                   {t("next")}{" "}
                 </Button>

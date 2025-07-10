@@ -1,7 +1,13 @@
 import { useTranslation } from "react-i18next";
 import AttachmentActions from "@/components/formComponents/AttachmentActions";
 import { TypographyH3 } from "@/components/Typography";
-import { Controller, useFormContext } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
+import {
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/ui/form";
 
 export default function Step6_Attachments() {
   const form = useFormContext();
@@ -27,8 +33,10 @@ export default function Step6_Attachments() {
     const input = document.createElement("input");
     input.type = "file";
 
-    input.onchange = (e: any) => {
-      const file = e.target.files?.[0];
+    input.onchange = (e: Event) => {
+      const target = e.target as HTMLInputElement;
+
+      const file = target.files?.[0];
       if (file) {
         console.log("📄 تم اختيار الملف:", file.name);
         alert(`${t("attachmentsTitle")}: ${file.name}`);
@@ -41,7 +49,7 @@ export default function Step6_Attachments() {
   return (
     <div dir={dir}>
       <TypographyH3 text={t("attachmentsTitle")} className="border-none pb-0" />
-      <p className="text-gray-500 text-xs">{t("instructions")}</p>
+      <p className="text-gray-500 text-xs xl:text-lg">{t("instructions")}</p>
 
       <div className="flex mb-4 items-center justify-between gap-4">
         <AttachmentActions
@@ -58,11 +66,40 @@ export default function Step6_Attachments() {
         />
       </div>
 
-      {form.formState.errors.checkbox && (
-        <p className="text-red-500 text-xs">{t("checkboxError")}</p>
-      )}
-
       <div className="flex mb-4 items-center gap-1">
+        <FormField
+          control={form.control}
+          name="checkbox"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <label className="flex items-center gap-2 cursor-pointer ">
+                  <input
+                    type="checkbox"
+                    {...field}
+                    checked={field.value}
+                    className=" appearance-none
+                  w-5 h-5
+                  border-2 border-orange-500
+                  checked:bg-orange-500 checked:border-orange-500
+                  focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-orange-500
+                  transition-colors
+                  cursor-pointer"
+                  />
+                  <p>{t("checkboxLabel")}</p>
+                </label>
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+      </div>
+    </div>
+  );
+}
+
+{
+  /*         
         <Controller
           name="checkbox"
           control={form.control}
@@ -87,8 +124,5 @@ export default function Step6_Attachments() {
               <p className="text-gray-500 text-sm">{t("checkboxLabel")}</p>
             </label>
           )}
-        />
-      </div>
-    </div>
-  );
+        /> */
 }

@@ -46,14 +46,14 @@ export default function CustomSelectField({
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel>
+          <FormLabel className="xl:text-base xl:my-3">
             {label}
             {required && <span className="text-gray-500 ml-1">*</span>}
           </FormLabel>
           <Select onValueChange={field.onChange} defaultValue={field.value}>
             <FormControl>
               <SelectTrigger
-                className="w-full h-7 px-3 py-1 text-base border border-input rounded-[6px] bg-transparent shadow-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none placeholder:text-muted-foreground transition-colors"
+                className="w-full h-7 xl:h-10  px-3 py-1 text-sm xl:text-base border border-input rounded-[6px] bg-transparent shadow-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none placeholder:text-muted-foreground transition-colors"
                 dir={dir}
               >
                 <SelectValue placeholder={placeholder} />

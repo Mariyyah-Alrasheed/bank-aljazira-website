@@ -1,0 +1,5 @@
+{
+  "required": "Required",
+  "min10Digits": "Must be at least 10 digits",
+  "acceptTerms": "You must accept the terms"
+}

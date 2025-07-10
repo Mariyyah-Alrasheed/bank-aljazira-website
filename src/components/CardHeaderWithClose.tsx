@@ -19,7 +19,7 @@ export default function CardHeaderWithClose({
   return (
     <div
       className={cn(
-        "text-sm border-b-2 flex justify-between items-center w-full  font-semibold text-gray-700",
+        "text-sm border-b-2 flex justify-between items-center w-full  font-semibold text-gray-700 xl:text-2xl xl:pb-2",
         className
       )}
       dir={dir}
