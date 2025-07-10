@@ -173,7 +173,7 @@ export default function FormLayout() {
 
             <Stepper currentStep={currentStep} />
 
-            <div className="flex-grow ">
+            <div className="flex-grow">
               <Outlet />
             </div>
 

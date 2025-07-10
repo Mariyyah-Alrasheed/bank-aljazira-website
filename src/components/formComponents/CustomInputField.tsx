@@ -49,6 +49,7 @@ export default function CustomInputField({
             <Input
               dir={dir}
               {...field}
+              value={field.value ?? ""}
               type={type}
               className={`${className ?? ""} ${
                 i18n.language === "ar" ? "text-right" : "text-left"

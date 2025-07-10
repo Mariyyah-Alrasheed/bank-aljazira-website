@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 
 export default function PastRequests() {
   const searchForm = useForm();
+
   const { handleSubmit, control } = searchForm;
   type MatchType = {
     companyName: string;
@@ -61,11 +62,16 @@ export default function PastRequests() {
 
   return (
     <FormProvider {...searchForm}>
-      <div className="text-right" dir="rtl">
+      <div className="" dir={dir}>
         <CardHeaderWithClose text={t("pageTitle")} className="mb-12 xl:p-5" />
 
-        <div className="mx-auto w-full max-w-4xl" dir={dir}>
-          <form onSubmit={handleSubmit(onSubmit)} className="">
+        <div
+          className={`mx-auto w-full max-w-4xl max-md:mb-10 ${
+            dir === "rtl" ? "text-right" : "text-left"
+          }`}
+          dir={dir}
+        >
+          <form onSubmit={handleSubmit(onSubmit)} className="max-md:m-6">
             <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-4">
               <CustomInputField
                 name="companyName"
